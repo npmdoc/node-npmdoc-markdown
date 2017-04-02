@@ -1,0 +1,866 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/evilstreak/markdown-js#readme"
+
+    >markdown (v0.5.0)</a>
+</h1>
+<h4>A sensible Markdown parser for javascript</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.markdown">module markdown</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown">
+            function <span class="apidocSignatureSpan">markdown.</span>markdown.Markdown
+            <span class="apidocSignatureSpan">(dialect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.parse">
+            function <span class="apidocSignatureSpan">markdown.</span>parse
+            <span class="apidocSignatureSpan">( source , dialect , options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>markdown</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">markdown.</span>markdown.Markdown.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.markdown.markdown">module markdown.markdown</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown">
+            function <span class="apidocSignatureSpan">markdown.markdown.</span>Markdown
+            <span class="apidocSignatureSpan">(dialect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.parse">
+            function <span class="apidocSignatureSpan">markdown.markdown.</span>parse
+            <span class="apidocSignatureSpan">( source, dialect )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.renderJsonML">
+            function <span class="apidocSignatureSpan">markdown.markdown.</span>renderJsonML
+            <span class="apidocSignatureSpan">( jsonml, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.toHTML">
+            function <span class="apidocSignatureSpan">markdown.markdown.</span>toHTML
+            <span class="apidocSignatureSpan">( source , dialect , options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.toHTMLTree">
+            function <span class="apidocSignatureSpan">markdown.markdown.</span>toHTMLTree
+            <span class="apidocSignatureSpan">( input, dialect , options )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.markdown.markdown.Markdown">module markdown.markdown.Markdown</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.Markdown">
+            function <span class="apidocSignatureSpan">markdown.markdown.</span>Markdown
+            <span class="apidocSignatureSpan">(dialect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.buildBlockOrder">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>buildBlockOrder
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.buildInlinePatterns">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>buildInlinePatterns
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.mk_block">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>mk_block
+            <span class="apidocSignatureSpan">(block, trail, line)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.subclassDialect">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>subclassDialect
+            <span class="apidocSignatureSpan">( d )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>DialectHelpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>dialects</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.markdown.markdown.Markdown.prototype">module markdown.markdown.Markdown.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.prototype.debug">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.prototype.loop_re_over_block">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>loop_re_over_block
+            <span class="apidocSignatureSpan">( re, block, cb )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.prototype.processBlock">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>processBlock
+            <span class="apidocSignatureSpan">( block, next )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.prototype.processInline">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>processInline
+            <span class="apidocSignatureSpan">( block )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.prototype.split_blocks">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>split_blocks
+            <span class="apidocSignatureSpan">( input, startLine )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.markdown.markdown.Markdown.prototype.toTree">
+            function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>toTree
+            <span class="apidocSignatureSpan">( source, custom_root )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.markdown" id="apidoc.module.markdown">module markdown</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown" id="apidoc.element.markdown.markdown.Markdown">
+        function <span class="apidocSignatureSpan">markdown.</span>markdown.Markdown
+        <span class="apidocSignatureSpan">(dialect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">markdown.Markdown = function (dialect) {
+  switch (typeof dialect) {
+    case &#x22;undefined&#x22;:
+      this.dialect = Markdown.dialects.Gruber;
+      break;
+    case &#x22;object&#x22;:
+      this.dialect = dialect;
+      break;
+    default:
+      if ( dialect in Markdown.dialects ) {
+        this.dialect = Markdown.dialects[dialect];
+      }
+      else {
+        throw new Error(&#x22;Unknown Markdown dialect &#x27;&#x22; + String(dialect) + &#x22;&#x27;&#x22;);
+      }
+      break;
+  }
+  this.em_state = [];
+  this.strong_state = [];
+  this.debug_indent = &#x22;&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.parse" id="apidoc.element.markdown.parse">
+        function <span class="apidocSignatureSpan">markdown.</span>parse
+        <span class="apidocSignatureSpan">( source , dialect , options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toHTML( source , dialect , options ) {
+  var input = expose.toHTMLTree( source , dialect , options );
+
+  return expose.renderJsonML( input );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var md = require( &#x22;markdown&#x22; ).markdown,
+  text = &#x22;[Markdown] is a simple text-based [markup language]\n&#x22; +
+         &#x22;created by [John Gruber]\n\n&#x22; +
+         &#x22;[John Gruber]: http://daringfireball.net&#x22;;
+
+// parse the markdown into a tree and grab the link references
+var tree = md.<span class="apidocCodeKeywordSpan">parse</span>( text ),
+  refs = tree[ 1 ].references;
+
+// iterate through the tree finding link references
+( function find_link_refs( jsonml ) {
+if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
+  var ref = jsonml[ 1 ].ref;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.markdown.markdown" id="apidoc.module.markdown.markdown">module markdown.markdown</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown" id="apidoc.element.markdown.markdown.Markdown">
+        function <span class="apidocSignatureSpan">markdown.markdown.</span>Markdown
+        <span class="apidocSignatureSpan">(dialect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Markdown = function (dialect) {
+  switch (typeof dialect) {
+    case &#x22;undefined&#x22;:
+      this.dialect = Markdown.dialects.Gruber;
+      break;
+    case &#x22;object&#x22;:
+      this.dialect = dialect;
+      break;
+    default:
+      if ( dialect in Markdown.dialects ) {
+        this.dialect = Markdown.dialects[dialect];
+      }
+      else {
+        throw new Error(&#x22;Unknown Markdown dialect &#x27;&#x22; + String(dialect) + &#x22;&#x27;&#x22;);
+      }
+      break;
+  }
+  this.em_state = [];
+  this.strong_state = [];
+  this.debug_indent = &#x22;&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.parse" id="apidoc.element.markdown.markdown.parse">
+        function <span class="apidocSignatureSpan">markdown.markdown.</span>parse
+        <span class="apidocSignatureSpan">( source, dialect )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function ( source, dialect ) {
+  // dialect will default if undefined
+  var md = new Markdown( dialect );
+  return md.toTree( source );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var md = require( &#x22;markdown&#x22; ).markdown,
+  text = &#x22;[Markdown] is a simple text-based [markup language]\n&#x22; +
+         &#x22;created by [John Gruber]\n\n&#x22; +
+         &#x22;[John Gruber]: http://daringfireball.net&#x22;;
+
+// parse the markdown into a tree and grab the link references
+var tree = md.<span class="apidocCodeKeywordSpan">parse</span>( text ),
+  refs = tree[ 1 ].references;
+
+// iterate through the tree finding link references
+( function find_link_refs( jsonml ) {
+if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
+  var ref = jsonml[ 1 ].ref;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.renderJsonML" id="apidoc.element.markdown.markdown.renderJsonML">
+        function <span class="apidocSignatureSpan">markdown.markdown.</span>renderJsonML
+        <span class="apidocSignatureSpan">( jsonml, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renderJsonML = function ( jsonml, options ) {
+  options = options || {};
+  // include the root element in the rendered output?
+  options.root = options.root || false;
+
+  var content = [];
+
+  if ( options.root ) {
+    content.push( render_tree( jsonml ) );
+  }
+  else {
+    jsonml.shift(); // get rid of the tag
+    if ( jsonml.length &#x26;&#x26; typeof jsonml[ 0 ] === &#x22;object&#x22; &#x26;&#x26; !( jsonml[ 0 ] instanceof Array ) ) {
+      jsonml.shift(); // get rid of the attributes
+    }
+
+    while ( jsonml.length ) {
+      content.push( render_tree( jsonml.shift() ) );
+    }
+  }
+
+  return content.join( &#x22;\n\n&#x22; );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  else if ( Array.isArray( jsonml[ 2 ] ) ) {
+    jsonml[ 2 ].forEach( find_link_refs );
+  }
+} )( tree );
+
+// convert the tree into html
+var html = md.<span class="apidocCodeKeywordSpan">renderJsonML</span>( md.toHTMLTree( tree ) );
+console.log( html );
+```
+
+## Intermediate Representation
+
+Internally the process to convert a chunk of markdown into a chunk of
+HTML has three steps:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.toHTML" id="apidoc.element.markdown.markdown.toHTML">
+        function <span class="apidocSignatureSpan">markdown.markdown.</span>toHTML
+        <span class="apidocSignatureSpan">( source , dialect , options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toHTML( source , dialect , options ) {
+  var input = expose.toHTMLTree( source , dialect , options );
+
+  return expose.renderJsonML( input );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Node
+
+The simple way to use it with node is:
+
+```js
+var markdown = require( &#x22;markdown&#x22; ).markdown;
+console.log( markdown.<span class="apidocCodeKeywordSpan">toHTML</span>( &#x22;Hello *World*!&#x22; ) );
+```
+
+### Browser
+
+It also works in a browser; here is a complete example:
+
+```html
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.toHTMLTree" id="apidoc.element.markdown.markdown.toHTMLTree">
+        function <span class="apidocSignatureSpan">markdown.markdown.</span>toHTMLTree
+        <span class="apidocSignatureSpan">( input, dialect , options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toHTMLTree( input, dialect , options ) {
+  // convert string input to an MD tree
+  if ( typeof input ===&#x22;string&#x22; ) input = this.parse( input, dialect );
+
+  // Now convert the MD tree to an HTML tree
+
+  // remove references from the tree
+  var attrs = extract_attr( input ),
+      refs = {};
+
+  if ( attrs &#x26;&#x26; attrs.references ) {
+    refs = attrs.references;
+  }
+
+  var html = convert_tree_to_html( input, refs , options );
+  merge_text_nodes( html );
+  return html;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  else if ( Array.isArray( jsonml[ 2 ] ) ) {
+    jsonml[ 2 ].forEach( find_link_refs );
+  }
+} )( tree );
+
+// convert the tree into html
+var html = md.renderJsonML( md.<span class="apidocCodeKeywordSpan">toHTMLTree</span>( tree ) );
+console.log( html );
+```
+
+## Intermediate Representation
+
+Internally the process to convert a chunk of markdown into a chunk of
+HTML has three steps:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.markdown.markdown.Markdown" id="apidoc.module.markdown.markdown.Markdown">module markdown.markdown.Markdown</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.Markdown" id="apidoc.element.markdown.markdown.Markdown.Markdown">
+        function <span class="apidocSignatureSpan">markdown.markdown.</span>Markdown
+        <span class="apidocSignatureSpan">(dialect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Markdown = function (dialect) {
+  switch (typeof dialect) {
+    case &#x22;undefined&#x22;:
+      this.dialect = Markdown.dialects.Gruber;
+      break;
+    case &#x22;object&#x22;:
+      this.dialect = dialect;
+      break;
+    default:
+      if ( dialect in Markdown.dialects ) {
+        this.dialect = Markdown.dialects[dialect];
+      }
+      else {
+        throw new Error(&#x22;Unknown Markdown dialect &#x27;&#x22; + String(dialect) + &#x22;&#x27;&#x22;);
+      }
+      break;
+  }
+  this.em_state = [];
+  this.strong_state = [];
+  this.debug_indent = &#x22;&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.buildBlockOrder" id="apidoc.element.markdown.markdown.Markdown.buildBlockOrder">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>buildBlockOrder
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildBlockOrder = function (d) {
+  var ord = [];
+  for ( var i in d ) {
+    if ( i == &#x22;__order__&#x22; || i == &#x22;__call__&#x22; ) continue;
+    ord.push( i );
+  }
+  d.__order__ = ord;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.buildInlinePatterns" id="apidoc.element.markdown.markdown.Markdown.buildInlinePatterns">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>buildInlinePatterns
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildInlinePatterns = function (d) {
+  var patterns = [];
+
+  for ( var i in d ) {
+    // __foo__ is reserved and not a pattern
+    if ( i.match( /^__.*__$/) ) continue;
+    var l = i.replace( /([\\.*+?|()\[\]{}])/g, &#x22;\\$1&#x22; )
+             .replace( /\n/, &#x22;\\n&#x22; );
+    patterns.push( i.length == 1 ? l : &#x22;(?:&#x22; + l + &#x22;)&#x22; );
+  }
+
+  patterns = patterns.join(&#x22;|&#x22;);
+  d.__patterns__ = patterns;
+  //print(&#x22;patterns:&#x22;, uneval( patterns ) );
+
+  var fn = d.__call__;
+  d.__call__ = function(text, pattern) {
+    if ( pattern != undefined ) {
+      return fn.call(this, text, pattern);
+    }
+    else
+    {
+      return fn.call(this, text, patterns);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.mk_block" id="apidoc.element.markdown.markdown.Markdown.mk_block">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>mk_block
+        <span class="apidocSignatureSpan">(block, trail, line)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mk_block = function (block, trail, line) {
+  // Be helpful for default case in tests.
+  if ( arguments.length == 1 ) trail = &#x22;\n\n&#x22;;
+
+  var s = new String(block);
+  s.trailing = trail;
+  // To make it clear its not just a string
+  s.inspect = mk_block_inspect;
+  s.toSource = mk_block_toSource;
+
+  if ( line != undefined )
+    s.lineNumber = line;
+
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.subclassDialect" id="apidoc.element.markdown.markdown.Markdown.subclassDialect">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.</span>subclassDialect
+        <span class="apidocSignatureSpan">( d )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subclassDialect = function ( d ) {
+  function Block() {}
+  Block.prototype = d.block;
+  function Inline() {}
+  Inline.prototype = d.inline;
+
+  return { block: new Block(), inline: new Inline() };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.markdown.markdown.Markdown.prototype" id="apidoc.module.markdown.markdown.Markdown.prototype">module markdown.markdown.Markdown.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.prototype.debug" id="apidoc.element.markdown.markdown.Markdown.prototype.debug">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function () {
+  var args = Array.prototype.slice.call( arguments);
+  args.unshift(this.debug_indent);
+  if ( typeof print !== &#x22;undefined&#x22; )
+      print.apply( print, args );
+  if ( typeof console !== &#x22;undefined&#x22; &#x26;&#x26; typeof console.log !== &#x22;undefined&#x22; )
+      console.log.apply( null, args );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.prototype.loop_re_over_block" id="apidoc.element.markdown.markdown.Markdown.prototype.loop_re_over_block">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>loop_re_over_block
+        <span class="apidocSignatureSpan">( re, block, cb )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loop_re_over_block = function ( re, block, cb ) {
+  // Dont use /g regexps with this
+  var m,
+      b = block.valueOf();
+
+  while ( b.length &#x26;&#x26; (m = re.exec(b) ) != null ) {
+    b = b.substr( m[0].length );
+    cb.call(this, m);
+  }
+  return b;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.prototype.processBlock" id="apidoc.element.markdown.markdown.Markdown.prototype.processBlock">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>processBlock
+        <span class="apidocSignatureSpan">( block, next )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function processBlock( block, next ) {
+  var cbs = this.dialect.block,
+      ord = cbs.__order__;
+
+  if ( &#x22;__call__&#x22; in cbs ) {
+    return cbs.__call__.call(this, block, next);
+  }
+
+  for ( var i = 0; i &#x3c; ord.length; i++ ) {
+    //D:this.debug( &#x22;Testing&#x22;, ord[i] );
+    var res = cbs[ ord[i] ].call( this, block, next );
+    if ( res ) {
+      //D:this.debug(&#x22;  matched&#x22;);
+      if ( !isArray(res) || ( res.length &#x3e; 0 &#x26;&#x26; !( isArray(res[0]) ) ) )
+        this.debug(ord[i], &#x22;didn&#x27;t return a proper array&#x22;);
+      //D:this.debug( &#x22;&#x22; );
+      return res;
+    }
+  }
+
+  // Uhoh! no match! Should we throw an error?
+  return [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.prototype.processInline" id="apidoc.element.markdown.markdown.Markdown.prototype.processInline">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>processInline
+        <span class="apidocSignatureSpan">( block )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function processInline( block ) {
+  return this.dialect.inline.__call__.call( this, String( block ) );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.prototype.split_blocks" id="apidoc.element.markdown.markdown.Markdown.prototype.split_blocks">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>split_blocks
+        <span class="apidocSignatureSpan">( input, startLine )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function splitBlocks( input, startLine ) {
+  input = input.replace(/(\r\n|\n|\r)/g, &#x22;\n&#x22;);
+  // [\s\S] matches _anything_ (newline or space)
+  // [^] is equivalent but doesn&#x27;t work in IEs.
+  var re = /([\s\S]+?)($|\n#|\n(?:\s*\n|$)+)/g,
+      blocks = [],
+      m;
+
+  var line_no = 1;
+
+  if ( ( m = /^(\s*\n)/.exec(input) ) != null ) {
+    // skip (but count) leading blank lines
+    line_no += count_lines( m[0] );
+    re.lastIndex = m[0].length;
+  }
+
+  while ( ( m = re.exec(input) ) !== null ) {
+    if (m[2] == &#x22;\n#&#x22;) {
+      m[2] = &#x22;\n&#x22;;
+      re.lastIndex--;
+    }
+    blocks.push( mk_block( m[1], m[2], line_no ) );
+    line_no += count_lines( m[0] );
+  }
+
+  return blocks;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.markdown.markdown.Markdown.prototype.toTree" id="apidoc.element.markdown.markdown.Markdown.prototype.toTree">
+        function <span class="apidocSignatureSpan">markdown.markdown.Markdown.prototype.</span>toTree
+        <span class="apidocSignatureSpan">( source, custom_root )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toTree( source, custom_root ) {
+  var blocks = source instanceof Array ? source : this.split_blocks( source );
+
+  // Make tree a member variable so its easier to mess with in extensions
+  var old_tree = this.tree;
+  try {
+    this.tree = custom_root || this.tree || [ &#x22;markdown&#x22; ];
+
+    blocks:
+    while ( blocks.length ) {
+      var b = this.processBlock( blocks.shift(), blocks );
+
+      // Reference blocks and the like won&#x27;t return any content
+      if ( !b.length ) continue blocks;
+
+      this.tree.push.apply( this.tree, b );
+    }
+    return this.tree;
+  }
+  finally {
+    if ( custom_root ) {
+      this.tree = old_tree;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
