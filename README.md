@@ -1,11 +1,13 @@
 # api documentation for  [markdown (v0.5.0)](https://github.com/evilstreak/markdown-js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-markdown.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-markdown) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-markdown.svg)](https://travis-ci.org/npmdoc/node-npmdoc-markdown)
 #### A sensible Markdown parser for javascript
 
-[![NPM](https://nodei.co/npm/markdown.png?downloads=true)](https://www.npmjs.com/package/markdown)
+[![NPM](https://nodei.co/npm/markdown.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/markdown)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-markdown/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-markdown_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-markdown/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-markdown/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-markdown/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-markdown/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-markdown/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-markdown/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -23,12 +25,10 @@
     "contributors": [
         {
             "name": "Dominic Baggott",
-            "email": "dominic.baggott@gmail.com",
             "url": "http://evilstreak.co.uk"
         },
         {
             "name": "Ash Berlin",
-            "email": "ash_markdownjs@firemirror.com",
             "url": "http://ashberlin.com"
         }
     ],
@@ -62,17 +62,14 @@
     "main": "./lib/index.js",
     "maintainers": [
         {
-            "name": "ashb",
-            "email": "ash.berlin@gmail.com"
+            "name": "ashb"
         },
         {
-            "name": "dom",
-            "email": "dominic.baggott@gmail.com"
+            "name": "dom"
         }
     ],
     "name": "markdown",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/evilstreak/markdown-js.git"
