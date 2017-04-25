@@ -627,7 +627,22 @@ HTML has three steps:
     }
   };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function Inline() {}
+Inline.prototype = d.inline;
+
+return { block: new Block(), inline: new Inline() };
+};
+
+Markdown.buildBlockOrder ( Markdown.dialects.Gruber.block );
+Markdown.<span class="apidocCodeKeywordSpan">buildInlinePatterns</span>( Markdown.dialects.Gruber.inline );
+
+Markdown.dialects.Maruku = Markdown.subclassDialect( Markdown.dialects.Gruber );
+
+Markdown.dialects.Maruku.processMetaHash = function processMetaHash( meta_string ) {
+var meta = split_meta_hash( meta_string ),
+    attr = {};
+...</pre></li>
     </ul>
 
 
@@ -654,7 +669,23 @@ HTML has three steps:
 
   return s;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var html = convert_tree_to_html( input, refs , options );
+  merge_text_nodes( html );
+  return html;
+};
+
+// For Spidermonkey based engines
+function mk_block_toSource() {
+  return &#x22;Markdown.<span class="apidocCodeKeywordSpan">mk_block</span>( &#x22; +
+          uneval(this.toString()) +
+          &#x22;, &#x22; +
+          uneval(this.trailing) +
+          &#x22;, &#x22; +
+          uneval(this.lineNumber) +
+          &#x22; )&#x22;;
+}
+...</pre></li>
     </ul>
 
 
@@ -674,7 +705,23 @@ HTML has three steps:
 
   return { block: new Block(), inline: new Inline() };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return { block: new Block(), inline: new Inline() };
+};
+
+Markdown.buildBlockOrder ( Markdown.dialects.Gruber.block );
+Markdown.buildInlinePatterns( Markdown.dialects.Gruber.inline );
+
+Markdown.dialects.Maruku = Markdown.<span class="apidocCodeKeywordSpan">subclassDialect</span>( Markdown.dialects.Gruber );
+
+Markdown.dialects.Maruku.processMetaHash = function processMetaHash( meta_string ) {
+var meta = split_meta_hash( meta_string ),
+    attr = {};
+
+for ( var i = 0; i &#x3c; meta.length; ++i ) {
+  // id: #foo
+...</pre></li>
     </ul>
 
 
@@ -703,7 +750,23 @@ HTML has three steps:
   if ( typeof console !== &#x22;undefined&#x22; &#x26;&#x26; typeof console.log !== &#x22;undefined&#x22; )
       console.log.apply( null, args );
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    ord = cbs.__order__;
+
+if ( &#x22;__call__&#x22; in cbs ) {
+  return cbs.__call__.call(this, block, next);
+}
+
+for ( var i = 0; i &#x3c; ord.length; i++ ) {
+  //D:this.<span class="apidocCodeKeywordSpan">debug</span>( &#x22;Testing&#x22;, ord[i] );
+  var res = cbs[ ord[i] ].call( this, block, next );
+  if ( res ) {
+    //D:this.debug(&#x22;  matched&#x22;);
+    if ( !isArray(res) || ( res.length &#x3e; 0 &#x26;&#x26; !( isArray(res[0]) ) ) )
+      this.debug(ord[i], &#x22;didn&#x27;t return a proper array&#x22;);
+    //D:this.debug( &#x22;&#x22; );
+    return res;
+...</pre></li>
     </ul>
 
 
@@ -726,7 +789,23 @@ HTML has three steps:
   }
   return b;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+      // 4 spaces + content
+      if ( !block.match( re ) ) return undefined;
+
+      block_search:
+      do {
+// Now pull out the rest of the lines
+var b = this.<span class="apidocCodeKeywordSpan">loop_re_over_block</span>(
+          re, block.valueOf(), function( m ) { ret.push( m[1] ); } );
+
+if ( b.length ) {
+  // Case alluded to in first comment. push it back on as a new block
+  next.unshift( mk_block(b, block.trailing) );
+  break block_search;
+}
+...</pre></li>
     </ul>
 
 
@@ -761,7 +840,23 @@ HTML has three steps:
   // Uhoh! no match! Should we throw an error?
   return [];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // Make tree a member variable so its easier to mess with in extensions
+  var old_tree = this.tree;
+  try {
+this.tree = custom_root || this.tree || [ &#x22;markdown&#x22; ];
+
+blocks:
+while ( blocks.length ) {
+  var b = this.<span class="apidocCodeKeywordSpan">processBlock</span>( blocks.shift(), blocks );
+
+  // Reference blocks and the like won&#x27;t return any content
+  if ( !b.length ) continue blocks;
+
+  this.tree.push.apply( this.tree, b );
+}
+return this.tree;
+...</pre></li>
     </ul>
 
 
@@ -776,7 +871,22 @@ HTML has three steps:
     <li>description and source-code<pre class="apidocCodePre">function processInline( block ) {
   return this.dialect.inline.__call__.call( this, String( block ) );
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  block: {
+atxHeader: function atxHeader( block, next ) {
+  var m = block.match( /^(#{1,6})\s*(.*?)\s*#*\s*(?:\n|$)/ );
+
+  if ( !m ) return undefined;
+
+  var header = [ &#x22;header&#x22;, { level: m[ 1 ].length } ];
+  Array.prototype.push.apply(header, this.<span class="apidocCodeKeywordSpan">processInline</span>(m[ 2 ]));
+
+  if ( m[0].length &#x3c; block.length )
+    next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );
+
+  return [ header ];
+},
+...</pre></li>
     </ul>
 
 
@@ -815,7 +925,23 @@ HTML has three steps:
 
   return blocks;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *  Markdown#toTree( source ) -&#x3e; JsonML
+ *  - source (String): markdown source to parse
+ *
+ *  Parse `source` into a JsonML tree representing the markdown document.
+ **/
+// custom_tree means set this.tree to `custom_tree` and restore old value on return
+Markdown.prototype.toTree = function toTree( source, custom_root ) {
+  var blocks = source instanceof Array ? source : this.<span class="apidocCodeKeywordSpan">split_blocks</span>( source );
+
+  // Make tree a member variable so its easier to mess with in extensions
+  var old_tree = this.tree;
+  try {
+this.tree = custom_root || this.tree || [ &#x22;markdown&#x22; ];
+
+blocks:
+...</pre></li>
     </ul>
 
 
@@ -852,7 +978,23 @@ HTML has three steps:
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*  - dialect (String | Dialect): the dialect to use, defaults to gruber
+*
+*  Parse `markdown` and return a markdown document as a Markdown.JsonML tree.
+**/
+expose.parse = function( source, dialect ) {
+ // dialect will default if undefined
+ var md = new Markdown( dialect );
+ return md.<span class="apidocCodeKeywordSpan">toTree</span>( source );
+};
+
+/**
+*  toHTML( markdown, [dialect]  ) -&#x3e; String
+*  toHTML( md_tree ) -&#x3e; String
+*  - markdown (String): markdown string to parse
+*  - md_tree (Markdown.JsonML): parsed markdown tree
+...</pre></li>
     </ul>
 
 

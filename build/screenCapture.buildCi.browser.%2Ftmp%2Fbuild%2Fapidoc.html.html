@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/evilstreak/markdown-js#readme"
-
-    >markdown (v0.5.0)</a>
+    <a href="https://github.com/evilstreak/markdown-js#readme">markdown (v0.5.0)</a>
 </h1>
 <h4>A sensible Markdown parser for javascript</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.markdown">module markdown</a><ol>
 
@@ -276,10 +269,10 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">markdown.Markdown = function (dialect) {
   switch (typeof dialect) {
-    case &#x22;undefined&#x22;:
+    case "undefined":
       this.dialect = Markdown.dialects.Gruber;
       break;
-    case &#x22;object&#x22;:
+    case "object":
       this.dialect = dialect;
       break;
     default:
@@ -287,13 +280,13 @@
         this.dialect = Markdown.dialects[dialect];
       }
       else {
-        throw new Error(&#x22;Unknown Markdown dialect &#x27;&#x22; + String(dialect) + &#x22;&#x27;&#x22;);
+        throw new Error("Unknown Markdown dialect '" + String(dialect) + "'");
       }
       break;
   }
   this.em_state = [];
   this.strong_state = [];
-  this.debug_indent = &#x22;&#x22;;
+  this.debug_indent = "";
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -314,10 +307,10 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```js
-var md = require( &#x22;markdown&#x22; ).markdown,
-  text = &#x22;[Markdown] is a simple text-based [markup language]\n&#x22; +
-         &#x22;created by [John Gruber]\n\n&#x22; +
-         &#x22;[John Gruber]: http://daringfireball.net&#x22;;
+var md = require( "markdown" ).markdown,
+  text = "[Markdown] is a simple text-based [markup language]\n" +
+         "created by [John Gruber]\n\n" +
+         "[John Gruber]: http://daringfireball.net";
 
 // parse the markdown into a tree and grab the link references
 var tree = md.<span class="apidocCodeKeywordSpan">parse</span>( text ),
@@ -325,7 +318,7 @@ var tree = md.<span class="apidocCodeKeywordSpan">parse</span>( text ),
 
 // iterate through the tree finding link references
 ( function find_link_refs( jsonml ) {
-if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
+if ( jsonml[ 0 ] === "link_ref" ) {
   var ref = jsonml[ 1 ].ref;
 ...</pre></li>
     </ul>
@@ -350,10 +343,10 @@ if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Markdown = function (dialect) {
   switch (typeof dialect) {
-    case &#x22;undefined&#x22;:
+    case "undefined":
       this.dialect = Markdown.dialects.Gruber;
       break;
-    case &#x22;object&#x22;:
+    case "object":
       this.dialect = dialect;
       break;
     default:
@@ -361,13 +354,13 @@ if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
         this.dialect = Markdown.dialects[dialect];
       }
       else {
-        throw new Error(&#x22;Unknown Markdown dialect &#x27;&#x22; + String(dialect) + &#x22;&#x27;&#x22;);
+        throw new Error("Unknown Markdown dialect '" + String(dialect) + "'");
       }
       break;
   }
   this.em_state = [];
   this.strong_state = [];
-  this.debug_indent = &#x22;&#x22;;
+  this.debug_indent = "";
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -388,10 +381,10 @@ if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```js
-var md = require( &#x22;markdown&#x22; ).markdown,
-  text = &#x22;[Markdown] is a simple text-based [markup language]\n&#x22; +
-         &#x22;created by [John Gruber]\n\n&#x22; +
-         &#x22;[John Gruber]: http://daringfireball.net&#x22;;
+var md = require( "markdown" ).markdown,
+  text = "[Markdown] is a simple text-based [markup language]\n" +
+         "created by [John Gruber]\n\n" +
+         "[John Gruber]: http://daringfireball.net";
 
 // parse the markdown into a tree and grab the link references
 var tree = md.<span class="apidocCodeKeywordSpan">parse</span>( text ),
@@ -399,7 +392,7 @@ var tree = md.<span class="apidocCodeKeywordSpan">parse</span>( text ),
 
 // iterate through the tree finding link references
 ( function find_link_refs( jsonml ) {
-if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
+if ( jsonml[ 0 ] === "link_ref" ) {
   var ref = jsonml[ 1 ].ref;
 ...</pre></li>
     </ul>
@@ -425,7 +418,7 @@ if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
   }
   else {
     jsonml.shift(); // get rid of the tag
-    if ( jsonml.length &#x26;&#x26; typeof jsonml[ 0 ] === &#x22;object&#x22; &#x26;&#x26; !( jsonml[ 0 ] instanceof Array ) ) {
+    if ( jsonml.length &amp;&amp; typeof jsonml[ 0 ] === "object" &amp;&amp; !( jsonml[ 0 ] instanceof Array ) ) {
       jsonml.shift(); // get rid of the attributes
     }
 
@@ -434,7 +427,7 @@ if ( jsonml[ 0 ] === &#x22;link_ref&#x22; ) {
     }
   }
 
-  return content.join( &#x22;\n\n&#x22; );
+  return content.join( "\n\n" );
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   }
@@ -471,16 +464,16 @@ HTML has three steps:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-### Node
+###Â&nbsp;Node
 
 The simple way to use it with node is:
 
 ```js
-var markdown = require( &#x22;markdown&#x22; ).markdown;
-console.log( markdown.<span class="apidocCodeKeywordSpan">toHTML</span>( &#x22;Hello *World*!&#x22; ) );
+var markdown = require( "markdown" ).markdown;
+console.log( markdown.<span class="apidocCodeKeywordSpan">toHTML</span>( "Hello *World*!" ) );
 ```
 
-### Browser
+###Â&nbsp;Browser
 
 It also works in a browser; here is a complete example:
 
@@ -499,7 +492,7 @@ It also works in a browser; here is a complete example:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toHTMLTree( input, dialect , options ) {
   // convert string input to an MD tree
-  if ( typeof input ===&#x22;string&#x22; ) input = this.parse( input, dialect );
+  if ( typeof input ==="string" ) input = this.parse( input, dialect );
 
   // Now convert the MD tree to an HTML tree
 
@@ -507,7 +500,7 @@ It also works in a browser; here is a complete example:
   var attrs = extract_attr( input ),
       refs = {};
 
-  if ( attrs &#x26;&#x26; attrs.references ) {
+  if ( attrs &amp;&amp; attrs.references ) {
     refs = attrs.references;
   }
 
@@ -550,10 +543,10 @@ HTML has three steps:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Markdown = function (dialect) {
   switch (typeof dialect) {
-    case &#x22;undefined&#x22;:
+    case "undefined":
       this.dialect = Markdown.dialects.Gruber;
       break;
-    case &#x22;object&#x22;:
+    case "object":
       this.dialect = dialect;
       break;
     default:
@@ -561,13 +554,13 @@ HTML has three steps:
         this.dialect = Markdown.dialects[dialect];
       }
       else {
-        throw new Error(&#x22;Unknown Markdown dialect &#x27;&#x22; + String(dialect) + &#x22;&#x27;&#x22;);
+        throw new Error("Unknown Markdown dialect '" + String(dialect) + "'");
       }
       break;
   }
   this.em_state = [];
   this.strong_state = [];
-  this.debug_indent = &#x22;&#x22;;
+  this.debug_indent = "";
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -584,7 +577,7 @@ HTML has three steps:
     <li>description and source-code<pre class="apidocCodePre">buildBlockOrder = function (d) {
   var ord = [];
   for ( var i in d ) {
-    if ( i == &#x22;__order__&#x22; || i == &#x22;__call__&#x22; ) continue;
+    if ( i == "__order__" || i == "__call__" ) continue;
     ord.push( i );
   }
   d.__order__ = ord;
@@ -607,14 +600,14 @@ HTML has three steps:
   for ( var i in d ) {
     // __foo__ is reserved and not a pattern
     if ( i.match( /^__.*__$/) ) continue;
-    var l = i.replace( /([\\.*+?|()\[\]{}])/g, &#x22;\\$1&#x22; )
-             .replace( /\n/, &#x22;\\n&#x22; );
-    patterns.push( i.length == 1 ? l : &#x22;(?:&#x22; + l + &#x22;)&#x22; );
+    var l = i.replace( /([\\.*+?|()\[\]{}])/g, "\\$1" )
+             .replace( /\n/, "\\n" );
+    patterns.push( i.length == 1 ? l : "(?:" + l + ")" );
   }
 
-  patterns = patterns.join(&#x22;|&#x22;);
+  patterns = patterns.join("|");
   d.__patterns__ = patterns;
-  //print(&#x22;patterns:&#x22;, uneval( patterns ) );
+  //print("patterns:", uneval( patterns ) );
 
   var fn = d.__call__;
   d.__call__ = function(text, pattern) {
@@ -656,7 +649,7 @@ var meta = split_meta_hash( meta_string ),
     <ul>
     <li>description and source-code<pre class="apidocCodePre">mk_block = function (block, trail, line) {
   // Be helpful for default case in tests.
-  if ( arguments.length == 1 ) trail = &#x22;\n\n&#x22;;
+  if ( arguments.length == 1 ) trail = "\n\n";
 
   var s = new String(block);
   s.trailing = trail;
@@ -677,13 +670,13 @@ var meta = split_meta_hash( meta_string ),
 
 // For Spidermonkey based engines
 function mk_block_toSource() {
-  return &#x22;Markdown.<span class="apidocCodeKeywordSpan">mk_block</span>( &#x22; +
+  return "Markdown.<span class="apidocCodeKeywordSpan">mk_block</span>( " +
           uneval(this.toString()) +
-          &#x22;, &#x22; +
+          ", " +
           uneval(this.trailing) +
-          &#x22;, &#x22; +
+          ", " +
           uneval(this.lineNumber) +
-          &#x22; )&#x22;;
+          " )";
 }
 ...</pre></li>
     </ul>
@@ -719,7 +712,7 @@ Markdown.dialects.Maruku.processMetaHash = function processMetaHash( meta_string
 var meta = split_meta_hash( meta_string ),
     attr = {};
 
-for ( var i = 0; i &#x3c; meta.length; ++i ) {
+for ( var i = 0; i &lt; meta.length; ++i ) {
   // id: #foo
 ...</pre></li>
     </ul>
@@ -745,26 +738,26 @@ for ( var i = 0; i &#x3c; meta.length; ++i ) {
     <li>description and source-code<pre class="apidocCodePre">debug = function () {
   var args = Array.prototype.slice.call( arguments);
   args.unshift(this.debug_indent);
-  if ( typeof print !== &#x22;undefined&#x22; )
+  if ( typeof print !== "undefined" )
       print.apply( print, args );
-  if ( typeof console !== &#x22;undefined&#x22; &#x26;&#x26; typeof console.log !== &#x22;undefined&#x22; )
+  if ( typeof console !== "undefined" &amp;&amp; typeof console.log !== "undefined" )
       console.log.apply( null, args );
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     ord = cbs.__order__;
 
-if ( &#x22;__call__&#x22; in cbs ) {
+if ( "__call__" in cbs ) {
   return cbs.__call__.call(this, block, next);
 }
 
-for ( var i = 0; i &#x3c; ord.length; i++ ) {
-  //D:this.<span class="apidocCodeKeywordSpan">debug</span>( &#x22;Testing&#x22;, ord[i] );
+for ( var i = 0; i &lt; ord.length; i++ ) {
+  //D:this.<span class="apidocCodeKeywordSpan">debug</span>( "Testing", ord[i] );
   var res = cbs[ ord[i] ].call( this, block, next );
   if ( res ) {
-    //D:this.debug(&#x22;  matched&#x22;);
-    if ( !isArray(res) || ( res.length &#x3e; 0 &#x26;&#x26; !( isArray(res[0]) ) ) )
-      this.debug(ord[i], &#x22;didn&#x27;t return a proper array&#x22;);
-    //D:this.debug( &#x22;&#x22; );
+    //D:this.debug("  matched");
+    if ( !isArray(res) || ( res.length &gt; 0 &amp;&amp; !( isArray(res[0]) ) ) )
+      this.debug(ord[i], "didn't return a proper array");
+    //D:this.debug( "" );
     return res;
 ...</pre></li>
     </ul>
@@ -783,7 +776,7 @@ for ( var i = 0; i &#x3c; ord.length; i++ ) {
   var m,
       b = block.valueOf();
 
-  while ( b.length &#x26;&#x26; (m = re.exec(b) ) != null ) {
+  while ( b.length &amp;&amp; (m = re.exec(b) ) != null ) {
     b = b.substr( m[0].length );
     cb.call(this, m);
   }
@@ -821,18 +814,18 @@ if ( b.length ) {
   var cbs = this.dialect.block,
       ord = cbs.__order__;
 
-  if ( &#x22;__call__&#x22; in cbs ) {
+  if ( "__call__" in cbs ) {
     return cbs.__call__.call(this, block, next);
   }
 
-  for ( var i = 0; i &#x3c; ord.length; i++ ) {
-    //D:this.debug( &#x22;Testing&#x22;, ord[i] );
+  for ( var i = 0; i &lt; ord.length; i++ ) {
+    //D:this.debug( "Testing", ord[i] );
     var res = cbs[ ord[i] ].call( this, block, next );
     if ( res ) {
-      //D:this.debug(&#x22;  matched&#x22;);
-      if ( !isArray(res) || ( res.length &#x3e; 0 &#x26;&#x26; !( isArray(res[0]) ) ) )
-        this.debug(ord[i], &#x22;didn&#x27;t return a proper array&#x22;);
-      //D:this.debug( &#x22;&#x22; );
+      //D:this.debug("  matched");
+      if ( !isArray(res) || ( res.length &gt; 0 &amp;&amp; !( isArray(res[0]) ) ) )
+        this.debug(ord[i], "didn't return a proper array");
+      //D:this.debug( "" );
       return res;
     }
   }
@@ -844,13 +837,13 @@ if ( b.length ) {
   // Make tree a member variable so its easier to mess with in extensions
   var old_tree = this.tree;
   try {
-this.tree = custom_root || this.tree || [ &#x22;markdown&#x22; ];
+this.tree = custom_root || this.tree || [ "markdown" ];
 
 blocks:
 while ( blocks.length ) {
   var b = this.<span class="apidocCodeKeywordSpan">processBlock</span>( blocks.shift(), blocks );
 
-  // Reference blocks and the like won&#x27;t return any content
+  // Reference blocks and the like won't return any content
   if ( !b.length ) continue blocks;
 
   this.tree.push.apply( this.tree, b );
@@ -878,10 +871,10 @@ atxHeader: function atxHeader( block, next ) {
 
   if ( !m ) return undefined;
 
-  var header = [ &#x22;header&#x22;, { level: m[ 1 ].length } ];
+  var header = [ "header", { level: m[ 1 ].length } ];
   Array.prototype.push.apply(header, this.<span class="apidocCodeKeywordSpan">processInline</span>(m[ 2 ]));
 
-  if ( m[0].length &#x3c; block.length )
+  if ( m[0].length &lt; block.length )
     next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );
 
   return [ header ];
@@ -899,9 +892,9 @@ atxHeader: function atxHeader( block, next ) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function splitBlocks( input, startLine ) {
-  input = input.replace(/(\r\n|\n|\r)/g, &#x22;\n&#x22;);
+  input = input.replace(/(\r\n|\n|\r)/g, "\n");
   // [\s\S] matches _anything_ (newline or space)
-  // [^] is equivalent but doesn&#x27;t work in IEs.
+  // [^] is equivalent but doesn't work in IEs.
   var re = /([\s\S]+?)($|\n#|\n(?:\s*\n|$)+)/g,
       blocks = [],
       m;
@@ -915,8 +908,8 @@ atxHeader: function atxHeader( block, next ) {
   }
 
   while ( ( m = re.exec(input) ) !== null ) {
-    if (m[2] == &#x22;\n#&#x22;) {
-      m[2] = &#x22;\n&#x22;;
+    if (m[2] == "\n#") {
+      m[2] = "\n";
       re.lastIndex--;
     }
     blocks.push( mk_block( m[1], m[2], line_no ) );
@@ -926,7 +919,7 @@ atxHeader: function atxHeader( block, next ) {
   return blocks;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- *  Markdown#toTree( source ) -&#x3e; JsonML
+ *  Markdown#toTree( source ) -&gt; JsonML
  *  - source (String): markdown source to parse
  *
  *  Parse `source` into a JsonML tree representing the markdown document.
@@ -938,7 +931,7 @@ Markdown.prototype.toTree = function toTree( source, custom_root ) {
   // Make tree a member variable so its easier to mess with in extensions
   var old_tree = this.tree;
   try {
-this.tree = custom_root || this.tree || [ &#x22;markdown&#x22; ];
+this.tree = custom_root || this.tree || [ "markdown" ];
 
 blocks:
 ...</pre></li>
@@ -959,13 +952,13 @@ blocks:
   // Make tree a member variable so its easier to mess with in extensions
   var old_tree = this.tree;
   try {
-    this.tree = custom_root || this.tree || [ &#x22;markdown&#x22; ];
+    this.tree = custom_root || this.tree || [ "markdown" ];
 
     blocks:
     while ( blocks.length ) {
       var b = this.processBlock( blocks.shift(), blocks );
 
-      // Reference blocks and the like won&#x27;t return any content
+      // Reference blocks and the like won't return any content
       if ( !b.length ) continue blocks;
 
       this.tree.push.apply( this.tree, b );
@@ -990,8 +983,8 @@ expose.parse = function( source, dialect ) {
 };
 
 /**
-*  toHTML( markdown, [dialect]  ) -&#x3e; String
-*  toHTML( md_tree ) -&#x3e; String
+*  toHTML( markdown, [dialect]  ) -&gt; String
+*  toHTML( md_tree ) -&gt; String
 *  - markdown (String): markdown string to parse
 *  - md_tree (Markdown.JsonML): parsed markdown tree
 ...</pre></li>
@@ -1006,3 +999,4 @@ expose.parse = function( source, dialect ) {
     ]
 </div>
 </div>
+</body></html>
