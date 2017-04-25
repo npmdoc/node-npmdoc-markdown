@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "markdown",
-    "description": "api documentation for [markdown (v0.5.0)](https://github.com/evilstreak/markdown-js#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-markdown.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-markdown) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-markdown.svg)](https://travis-ci.org/npmdoc/node-npmdoc-markdown)",
+    "description": "#### basic api documentation for  [markdown (v0.5.0)](https://github.com/evilstreak/markdown-js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-markdown.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-markdown) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-markdown.svg)](https://travis-ci.org/npmdoc/node-npmdoc-markdown)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "markdown": "*",
